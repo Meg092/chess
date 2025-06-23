@@ -24,7 +24,7 @@ class GroundControl extends GetView<ScoreRateLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.vijsr.value)),
+              url: WebUri.uri(Uri.parse(controller.zowimnc.value)),
               timeoutInterval:10
             ),
             initialSettings: InAppWebViewSettings(

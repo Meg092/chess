@@ -11,8 +11,8 @@ class ScoreRateView extends GetView<ScoreRateLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.witting.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.donnelly.value
+              ? const CircularProgressIndicator(color: Colors.white)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class ScoreRateView extends GetView<ScoreRateLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.lvsqy();
+              controller.gmuzojek();
             },
             icon: const Icon(
               Icons.restart_alt,

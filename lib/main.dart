@@ -5,8 +5,11 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:get/get.dart';
 import 'package:score_reversed/pages/score_check/score_check_binding.dart';
 import 'package:score_reversed/pages/score_check/score_check_view.dart';
+import 'package:score_reversed/pages/score_main/ground_control.dart';
 import 'package:score_reversed/pages/score_main/score_main_binding.dart';
 import 'package:score_reversed/pages/score_main/score_main_view.dart';
+import 'package:score_reversed/pages/score_rate/score_rate_binding.dart';
+import 'package:score_reversed/pages/score_rate/score_rate_view.dart';
 import 'package:score_reversed/pages/score_setting/score_setting_binding.dart';
 import 'package:score_reversed/pages/score_setting/score_setting_view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Scores,
-      initialRoute: '/score_main',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -90,7 +93,9 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Scores = [
+  GetPage(name: '/', page: () => const ScoreRateView(), binding: ScoreRateBinding()),
   GetPage(name: '/score_check', page: () => const ScoreCheckView(), binding: ScoreCheckBinding()),
   GetPage(name: '/score_main', page: () => const ScoreMainPage(), binding: ScoreMainBinding()),
+  GetPage(name: '/score_over', page: () => GroundControl()),
   GetPage(name: '/score_setting', page: () => ScoreSettingPage(), binding: ScoreSettingBinding()),
 ];
